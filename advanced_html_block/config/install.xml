@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<concrete5-cif version="1.0">
+    <blocktypes>
+        <blocktype handle="advanced_html" package="advanced_html_block"/>
+    </blocktypes>
+</concrete5-cif>
