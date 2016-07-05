@@ -1,0 +1,50 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Advanced HTML Block 0.9\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-07-05 10:05+0900\n"
+"PO-Revision-Date: 2016-07-05 10:06+0900\n"
+"Last-Translator: Takuro Hishikawa <hishikawa@concrete5.co.jp>\n"
+"Language-Team: \n"
+"Language: ja_JP\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Poedit-KeywordsList: t;t2:1,2;tc:1c,2\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Generator: Poedit 1.7.5\n"
+"X-Poedit-SearchPath-0: ../../..\n"
+
+#: ../../../blocks/advanced_html/controller.php:24 ../../../controller.php:14
+msgid "HTML block with sitemap and file selector."
+msgstr "サイトマップとファイルセレクタ付きのHTMLブロック"
+
+#: ../../../blocks/advanced_html/controller.php:29
+msgid "Advanced HTML"
+msgstr "拡張HTML"
+
+#: ../../../blocks/advanced_html/form_setup_html.php:4
+msgid "Insert Page Link"
+msgstr "ページリンクを挿入"
+
+#: ../../../blocks/advanced_html/form_setup_html.php:5
+msgid "Insert File Inline Link"
+msgstr "ファイルインラインリンクを挿入"
+
+#: ../../../blocks/advanced_html/form_setup_html.php:6
+msgid "Insert File Download Link"
+msgstr "ファイルダウンロードリンクを挿入"
+
+#: ../../../blocks/advanced_html/form_setup_html.php:7
+msgid "Insert Base URL"
+msgstr "ベースURLを挿入"
+
+#: ../../../controller.php:19
+msgid "Advanced HTML Block"
+msgstr "拡張HTMLブロック"
+
+# Don't change this, please use same words with concrete5 core translation. see www.transifex.com/projects/p/concrete5/
+#~ msgid "Access Denied."
+#~ msgstr "アクセス拒否"

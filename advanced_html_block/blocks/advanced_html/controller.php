@@ -21,7 +21,7 @@ class Controller extends BlockController
 
     public function getBlockTypeDescription()
     {
-        return t("Raw HTML block with sitemap and file selector.");
+        return t("HTML block with sitemap and file selector.");
     }
 
     public function getBlockTypeName()

@@ -11,7 +11,7 @@ class Controller extends \Concrete\Core\Package\Package
 
     public function getPackageDescription()
     {
-        return t('Raw HTML block with sitemap and file selector.');
+        return t('HTML block with sitemap and file selector.');
     }
 
     public function getPackageName()
