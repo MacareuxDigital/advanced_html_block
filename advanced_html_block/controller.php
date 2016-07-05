@@ -7,7 +7,7 @@ class Controller extends \Concrete\Core\Package\Package
 {
     protected $pkgHandle = 'advanced_html_block';
     protected $appVersionRequired = '5.7.5';
-    protected $pkgVersion = '0.1';
+    protected $pkgVersion = '0.9';
 
     public function getPackageDescription()
     {

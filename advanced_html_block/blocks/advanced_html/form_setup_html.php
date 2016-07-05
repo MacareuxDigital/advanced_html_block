@@ -2,7 +2,9 @@
 
 <p>
     <button id="ccm-block-advanced-html-page-selector" type="button" class="btn btn-primary btn-xs"><?php echo t('Insert Page Link'); ?></button>
-    <button id="ccm-block-advanced-html-file-selector" type="button" class="btn btn-primary btn-xs"><?php echo t('Insert File Link'); ?></button>
+    <button id="ccm-block-advanced-html-inline-file-selector" type="button" class="btn btn-primary btn-xs"><?php echo t('Insert File Inline Link'); ?></button>
+    <button id="ccm-block-advanced-html-download-file-selector" type="button" class="btn btn-primary btn-xs"><?php echo t('Insert File Download Link'); ?></button>
+    <button id="ccm-block-advanced-html-base-url" type="button" class="btn btn-primary btn-xs"><?php echo t('Insert Base URL'); ?></button>
 </p>
 <div id="ccm-block-advanced-html-value"><?=htmlspecialchars($content,ENT_QUOTES,APP_CHARSET)?></div>
 <textarea style="display: none" id="ccm-block-advanced-html-value-textarea" name="content"></textarea>
@@ -31,10 +33,20 @@
             });
         });
         
-        $('#ccm-block-advanced-html-file-selector').on('click', function() {
+        $('#ccm-block-advanced-html-inline-file-selector').on('click', function() {
             ConcreteFileManager.launchDialog(function(data) {
                 editor.insert('{CCM:FID_' + data.fID + '}');
             });
+        });
+
+        $('#ccm-block-advanced-html-download-file-selector').on('click', function() {
+            ConcreteFileManager.launchDialog(function(data) {
+                editor.insert('{CCM:FID_DL_' + data.fID + '}');
+            });
+        });
+
+        $('#ccm-block-advanced-html-base-url').on('click', function() {
+            editor.insert('{CCM:BASE_URL}');
         });
     });
 
