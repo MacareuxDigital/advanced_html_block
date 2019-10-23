@@ -93,4 +93,44 @@ class Controller extends BlockController
 
         return nl2br($s);
     }
+
+    public function getImportData($blockNode, $page)
+    {
+        $content = $blockNode->data->record->content;
+        $content = LinkAbstractor::import($content);
+        $args = ['content' => $content];
+
+        return $args;
+    }
+
+    public function export(\SimpleXMLElement $blockNode)
+    {
+        $data = $blockNode->addChild('data');
+        $data->addAttribute('table', $this->getBlockTypeDatabaseTable());
+        $record = $data->addChild('record');
+        $cnode = $record->addChild('content');
+        $node = dom_import_simplexml($cnode);
+        $no = $node->ownerDocument;
+
+        $text = preg_replace_callback(
+            '/{CCM:CID_([0-9]+)}/i',
+            array('\Concrete\Core\Backup\ContentExporter', 'replacePageWithPlaceHolderInMatch'),
+            $this->content
+        );
+
+        $text = preg_replace_callback(
+            '/{CCM:FID_DL_([0-9]+)}/i',
+            array('\Concrete\Core\Backup\ContentExporter', 'replaceFileWithPlaceHolderInMatch'),
+            $text
+        );
+
+        $text = preg_replace_callback(
+            '/{CCM:FID_([0-9]+)}/i',
+            array('\Concrete\Core\Backup\ContentExporter', 'replaceFileWithPlaceHolderInMatch'),
+            $text
+        );
+
+        $cdata = $no->createCDataSection($text);
+        $node->appendChild($cdata);
+    }
 }
