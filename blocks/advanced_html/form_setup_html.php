@@ -1,4 +1,7 @@
-<?php defined('C5_EXECUTE') or die("Access Denied."); ?>  
+<?php
+defined('C5_EXECUTE') or die("Access Denied.");
+$content = $content ?? null;
+?>
 
 <p>
     <button id="ccm-block-advanced-html-page-selector" type="button" class="btn btn-primary btn-xs"><?php echo t('Insert Page Link'); ?></button>
@@ -41,7 +44,12 @@
 
         $('#ccm-block-advanced-html-download-file-selector').on('click', function() {
             ConcreteFileManager.launchDialog(function(data) {
-                editor.insert('{CCM:FID_DL_' + data.fID + '}');
+                ConcreteFileManager.getFileDetails(data.fID, function(r) {
+                    jQuery.fn.dialog.hideLoader();
+                    var file = r.files[0];
+                    editor.insert(file.urlDownload);
+                })
+                
             });
         });
 
