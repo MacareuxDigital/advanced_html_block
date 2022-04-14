@@ -3,8 +3,5 @@
   "description": "HTML block with sitemap and file selector.",
   "type": "concrete5-package",
   "license": "MIT",
-  "minimum-stability": "stable",
-  "require": {
-    "concrete5/core": "^8.2"
-  }
+  "minimum-stability": "stable"
 }
