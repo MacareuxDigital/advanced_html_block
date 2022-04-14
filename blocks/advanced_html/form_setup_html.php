@@ -3,12 +3,12 @@ defined('C5_EXECUTE') or die("Access Denied.");
 $content = $content ?? null;
 ?>
 
-<p>
-    <button id="ccm-block-advanced-html-page-selector" type="button" class="btn btn-primary btn-xs"><?php echo t('Insert Page Link'); ?></button>
-    <button id="ccm-block-advanced-html-inline-file-selector" type="button" class="btn btn-primary btn-xs"><?php echo t('Insert File Inline Link'); ?></button>
-    <button id="ccm-block-advanced-html-download-file-selector" type="button" class="btn btn-primary btn-xs"><?php echo t('Insert File Download Link'); ?></button>
-    <button id="ccm-block-advanced-html-base-url" type="button" class="btn btn-primary btn-xs"><?php echo t('Insert Base URL'); ?></button>
-</p>
+<div class="btn-group" role="group" aria-label="<?= t('Insert Link Buttons') ?>">
+    <button id="ccm-block-advanced-html-page-selector" type="button" class="btn btn-outline-primary btn-sm"><?php echo t('Page Link'); ?></button>
+    <button id="ccm-block-advanced-html-inline-file-selector" type="button" class="btn btn-outline-primary btn-sm"><?php echo t('File Inline Link'); ?></button>
+    <button id="ccm-block-advanced-html-download-file-selector" type="button" class="btn btn-outline-primary btn-sm"><?php echo t('File Download Link'); ?></button>
+    <button id="ccm-block-advanced-html-base-url" type="button" class="btn btn-outline-primary btn-sm"><?php echo t('Base URL'); ?></button>
+</div>
 <div id="ccm-block-advanced-html-value"><?=htmlspecialchars($content,ENT_QUOTES,APP_CHARSET)?></div>
 <textarea style="display: none" id="ccm-block-advanced-html-value-textarea" name="content"></textarea>
 
